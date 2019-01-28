@@ -5,5 +5,5 @@ import com.bjornspetprojects.microservices.distanceconverterservice.model.Distan
 import java.math.BigDecimal;
 
 public interface DistanceConversionService {
-    DistanceConversion calculateDistanceConversion(String from, String to, BigDecimal originalAmount);
+    DistanceConversion calculateDistanceConversion(DistanceConversion distanceConversion, BigDecimal originalAmount);
 }
