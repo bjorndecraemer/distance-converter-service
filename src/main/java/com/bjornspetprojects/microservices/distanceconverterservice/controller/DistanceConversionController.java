@@ -1,6 +1,7 @@
 package com.bjornspetprojects.microservices.distanceconverterservice.controller;
 
 import com.bjornspetprojects.microservices.distanceconverterservice.model.DistanceConversion;
+import com.bjornspetprojects.microservices.distanceconverterservice.model.UnitRate;
 import com.bjornspetprojects.microservices.distanceconverterservice.proxies.UnitRateServiceProxy;
 import com.bjornspetprojects.microservices.distanceconverterservice.services.DistanceConversionService;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -24,7 +25,7 @@ public class DistanceConversionController {
     public DistanceConversion getDistanceConversion(@PathVariable String from,
                                                     @PathVariable String to,
                                                     @PathVariable BigDecimal originalAmount){
-        DistanceConversion proxyResult = unitRateServiceProxy.getDistanceConversion(from,to);
+        UnitRate proxyResult = unitRateServiceProxy.getUnitRate(from,to);
 
         return distanceConversionService.calculateDistanceConversion(proxyResult,originalAmount);
     }

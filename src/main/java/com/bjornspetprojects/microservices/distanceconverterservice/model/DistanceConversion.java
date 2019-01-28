@@ -19,4 +19,6 @@ public class DistanceConversion {
     private BigDecimal originalAmount;
     private BigDecimal currentAmount;
     private Integer conversionPrecision;
+    private int unitRateServicePort;
+    private int distanceConverterServicePort;
 }
