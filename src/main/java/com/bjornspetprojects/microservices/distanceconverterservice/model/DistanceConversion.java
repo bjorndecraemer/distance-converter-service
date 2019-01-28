@@ -12,9 +12,11 @@ import java.math.BigDecimal;
 @AllArgsConstructor
 @Builder
 public class DistanceConversion {
+    private String environment;
     private String from;
     private String to;
+    private BigDecimal conversionRate;
     private BigDecimal originalAmount;
-    private BigDecimal conversionFactor;
     private BigDecimal currentAmount;
+    private Integer conversionPrecision;
 }

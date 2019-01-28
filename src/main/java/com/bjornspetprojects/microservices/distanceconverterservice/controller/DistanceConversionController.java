@@ -25,15 +25,6 @@ public class DistanceConversionController {
     public DistanceConversion getDistanceConversion(@PathVariable String from,
                                                     @PathVariable String to,
                                                     @PathVariable BigDecimal originalAmount){
-        Map<String,String> uriVariables = new HashMap<>();
-        uriVariables.put("from",from);
-        uriVariables.put("to",to);
-        ResponseEntity<DistanceConversion> responseEntity = new RestTemplate().getForEntity(
-                "http://localhost:8000/unit-rate/from/{from}/to/{to}",
-                DistanceConversion.class,
-                uriVariables);
-        DistanceConversion response = responseEntity.getBody();
-        System.out.println("RESPONSE :"+response.toString());
         return distanceConversionService.calculateDistanceConversion(from,to,originalAmount);
     }
 }
